@@ -1,0 +1,11 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-sidenav {
+    width: 200px;
+}
+
+.mat-drawer-container {
+    background: none;
+}

@@ -1,1 +1,55 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary" class="p-5">
+    <span class="logo">
+        <img src="assets/logo.png" alt="Logo" />
+    </span>
+    <span>Book World</span>
+    <span class="example-spacer"></span>
+    <button mat-mini-fab [matMenuTriggerFor]="user" aria-label="Example icon-button with person icon">
+        <mat-icon>person</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-sidenav-container class="px-5">
+    <mat-sidenav mode="side" opened>
+        <div class="px-3">
+            <mat-nav-list role="list">
+                <mat-list-item role="listitem">
+                    <mat-icon matListItemIcon>dashboard</mat-icon>
+                    <a matListItemTitle class="ms-2">Dashboard</a>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    <mat-icon matListItemIcon>library_books</mat-icon>
+                    <a matListItemTitle class="ms-2">All Books</a>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    <mat-icon matListItemIcon>category</mat-icon>
+                    <a matListItemTitle class="ms-2">Categories</a>
+                </mat-list-item>
+                <mat-list-item role="listitem">
+                    <mat-icon matListItemIcon>storefront</mat-icon>
+                    <a matListItemTitle class="ms-2">Shops</a>
+                </mat-list-item>
+            </mat-nav-list>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-nav-list role="list">
+            <mat-list-item role="listitem">Dashboard</mat-list-item>
+            <mat-list-item role="listitem">All Books</mat-list-item>
+            <mat-list-item role="listitem">Categories</mat-list-item>
+            <mat-list-item role="listitem">Shops</mat-list-item>
+        </mat-nav-list>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #user="matMenu">
+    <button mat-menu-item>
+        <mat-icon>login</mat-icon>
+        <span>Login</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+    </button>
+</mat-menu>
