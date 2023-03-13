@@ -9,3 +9,7 @@
 .mat-drawer-container {
     background: none;
 }
+
+.mat-drawer-content {
+    min-height: 210px;
+}

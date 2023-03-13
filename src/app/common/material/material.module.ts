@@ -6,6 +6,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   exports: [
     MatToolbarModule,
@@ -14,7 +15,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     MatMenuModule,
     MatGridListModule,
     MatListModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatDividerModule
   ]
 })
 export class MaterialModule { }

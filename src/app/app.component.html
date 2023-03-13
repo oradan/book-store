@@ -15,11 +15,11 @@
             <mat-nav-list role="list">
                 <mat-list-item role="listitem">
                     <mat-icon matListItemIcon>dashboard</mat-icon>
-                    <a matListItemTitle class="ms-2">Dashboard</a>
+                    <a routerLink ='/dashboard' matListItemTitle class="ms-2">Dashboard</a>
                 </mat-list-item>
                 <mat-list-item role="listitem">
                     <mat-icon matListItemIcon>library_books</mat-icon>
-                    <a matListItemTitle class="ms-2">All Books</a>
+                    <a  matListItemTitle class="ms-2">All Books</a>
                 </mat-list-item>
                 <mat-list-item role="listitem">
                     <mat-icon matListItemIcon>category</mat-icon>
@@ -33,13 +33,9 @@
         </div>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-nav-list role="list">
-            <mat-list-item role="listitem">Dashboard</mat-list-item>
-            <mat-list-item role="listitem">All Books</mat-list-item>
-            <mat-list-item role="listitem">Categories</mat-list-item>
-            <mat-list-item role="listitem">Shops</mat-list-item>
-        </mat-nav-list>
-        <router-outlet></router-outlet>
+        <div class="p-3">
+            <router-outlet></router-outlet>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
 
