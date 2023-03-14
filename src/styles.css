@@ -1,7 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 
 /* utilities */
@@ -9,6 +16,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .color-primary {
     color: #3f51b5
 }
+
 .color-accent {
     color: #ff4081
+}
+
+.bw-card-container {
+    display: flex;
+}
+
+.bw-card {
+    width: 24%;
+    margin: 0 10px;
 }

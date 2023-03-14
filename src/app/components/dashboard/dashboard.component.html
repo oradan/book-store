@@ -1,10 +1,32 @@
 <div>
-    <section>
-        <div class="color-accent h3 pb-2">The most apreciated Books</div>
-        <mat-divider></mat-divider>
-    </section>
-    <section>
-        <div class="color-accent h3 pb-2">Recent orders</div>
-        <mat-divider></mat-divider>
-    </section>
+  <section class="my-3">
+    <div class="color-accent h3 my-2">The most apreciated Books</div>
+    <mat-divider class="my-3"></mat-divider>
+    <div class="bw-card-container">
+      <ng-container>
+        <mat-card class="bw-card">
+          <mat-card-header>
+            <img mat-card-avatar alt="Photo of a book">
+            <mat-card-title></mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p></p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button  mat-icon-button color = "primary" aria-label="Example icon button with a bookmark icon">
+              <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-icon-button color="primary" aria-label="icon button with a share icon">
+              <mat-icon>share</mat-icon>
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+  </section>
+  <section class="my-3">
+    <div class="color-accent h3 my-2">Recent orders</div>
+    <mat-divider class="my-3"></mat-divider>
+  </section>
 </div>

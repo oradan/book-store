@@ -1,0 +1,16 @@
+.mat-card-avatar{
+    width: 50px;
+    height: 50px;
+}
+
+.mat-card-header .mat-card-title {
+    font-size: 16px;
+}
+
+.mat-card-header {
+    height: 85px;
+}
+
+table {
+    width: 100%;
+  }
