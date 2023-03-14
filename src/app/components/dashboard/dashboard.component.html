@@ -3,18 +3,22 @@
     <div class="color-accent h3 my-2">The most apreciated Books</div>
     <mat-divider class="my-3"></mat-divider>
     <div class="bw-card-container">
-      <ng-container>
+      <ng-container *ngFor="let book of favoriteBooks">
         <mat-card class="bw-card">
           <mat-card-header>
-            <img mat-card-avatar alt="Photo of a book">
-            <mat-card-title></mat-card-title>
-            <mat-card-subtitle></mat-card-subtitle>
+            <img mat-card-avatar [src]="book.img" alt="Photo of a Shiba Inu">
+            <mat-card-title>{{book.name}}</mat-card-title>
+            <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
           </mat-card-header>
           <mat-card-content>
-            <p></p>
+            <p>
+              {{book.description}}
+            </p>
           </mat-card-content>
           <mat-card-actions>
-            <button  mat-icon-button color = "primary" aria-label="Example icon button with a bookmark icon">
+            <button (click)="toggleFvorite(book.id)" mat-icon-button
+              [ngClass]="isUserFavorite(book.id) ? 'color-accent' : 'color-primary'"
+              aria-label="Example icon button with a bookmark icon">
               <mat-icon>favorite</mat-icon>
             </button>
             <button mat-icon-button color="primary" aria-label="icon button with a share icon">
@@ -28,5 +32,18 @@
   <section class="my-3">
     <div class="color-accent h3 my-2">Recent orders</div>
     <mat-divider class="my-3"></mat-divider>
+
+    <table mat-table [dataSource]="recentOrders" class="mat-elevation-z8">
+
+      <ng-container *ngFor='let item of displayedColumns' matColumnDef="{{item.columnDef}}">
+        <th mat-header-cell *matHeaderCellDef> {{item.columnName}} </th>
+        <td mat-cell *matCellDef="let element"> {{item.isDate ? (element[item.columnDef] | date:'medium') :
+          element[item.columnDef]}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="getCoulmnDEf(displayedColumns)"></tr>
+      <tr mat-row *matRowDef="let row; columns: getCoulmnDEf(displayedColumns);"></tr>
+    </table>
+
   </section>
 </div>

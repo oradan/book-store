@@ -81,10 +81,30 @@ export class DashboardComponent implements OnInit {
     { columnDef: "order_date", columnName: "Order Date", isDate: true }
   ]
   userFavoriteBooks: string[] = [];
-
   constructor() { }
-
+  date = new Date()
   ngOnInit(): void {
+    this.userFavoriteBooks = localStorage.getItem('favorite_books') ? JSON.parse(localStorage.getItem('favorite_books') as string) : [];
 
+  }
+
+
+  isUserFavorite(id: string) {
+    return this.userFavoriteBooks.includes(id)
+  }
+
+  toggleFvorite(id: string) {
+    if (this.userFavoriteBooks.includes(id)) {
+      const intex = this.userFavoriteBooks.indexOf(id);
+      this.userFavoriteBooks.splice(intex, 1);
+    } else {
+      this.userFavoriteBooks.push(id)
+    }
+
+    localStorage.setItem('favorite_books', JSON.stringify(this.userFavoriteBooks))
+  }
+
+  getCoulmnDEf(displayedColumns: any) {
+    return displayedColumns.map((e:any) => e.columnDef)
   }
 }
